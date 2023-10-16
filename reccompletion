@@ -1,0 +1,17 @@
+<?php
+
+$dsn = 'mysql:dbname=delivery; host=localhost; charset=utf8';
+$db = new PDO($dsn,'root','root');
+
+$x = sprintf('INSERT INTO derivery SET nimotu_id="%s",month="%s",date="%s",time="%s",message="%s"',$_POST['nimotu_id'],$_POST['month'],$_POST['date'],$_POST['time'],$_POST['message']);
+$db->query($x);
+?>
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>予約が完了しました</p>
+<p>内容詳細メールをご確認ください</p>
+<a href="chome.php">ホーム画面に戻る</a>
+</body></html>
